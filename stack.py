@@ -1,3 +1,8 @@
+'''
+Stack implementation
+
+'''
+
 class Stack(object):
   ''' Represents a stack i.e. FILO '''
 
@@ -11,7 +16,12 @@ class Stack(object):
   def pop(self):
     ''' Should remove the data at the top of the stack and return it '''
     return self._stack.pop()
-  
+
+ 
+  def get_stack(self):
+    '''Should return the entire stack '''
+    return self._stack
+
   @property
   def top(self):
     ''' Should return the data at the top of the stack '''

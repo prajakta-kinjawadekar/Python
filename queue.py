@@ -1,9 +1,19 @@
+'''
+Queue implementation
+
+'''
+
+
 class Queue(object):
   ''' Represents a queue i.e. FIFO '''
+
+
   def __init__(self):
-      self._queue = []
+  	self._queue = []
     
-  
+  def __repr__(self):
+  	return "{0}".format(self._queue)
+
   def enqueue(self, data):
     ''' Should add the data at the end of the queue '''
     self._queue.append(data)
@@ -12,9 +22,10 @@ class Queue(object):
   def dequeue(self):
     ''' Should remove the data from the front of the queue and return it '''
     return self._queue.pop(0)
-
+  
+  
   def get_queue(self):
-    '''Should print the entire queue '''
+    '''Should return the entire queue '''
     return self._queue
   
   @property
