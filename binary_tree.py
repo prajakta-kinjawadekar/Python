@@ -65,13 +65,13 @@ class BinaryTree:
         while True:
             if head is None:
                 return
-        data.append(head.val)
-        # append the parent's left or right node into the queue
-        [que.enqueue(node) for node in [head.left, head.right] if node]
-        if que.get_queue():
-            head = que.dequeue()
-        else:
-            break
+            data.append(head.val)
+            # append the parent's left or right node into the queue
+            [que.enqueue(node) for node in [head.left, head.right] if node]
+            if que.get_queue():
+                head = que.dequeue()
+            else:
+                break
         return data
 
     def find(self, value):
@@ -86,10 +86,10 @@ class BinaryTree:
     def inorder(self):
         '''
         in-order tree traversal
-        Until all nodes are traversed −
-        Step 1 − Visit all nodes in left subtree.
-        Step 2 − Visit root node.
-        Step 3 − Visit all nodes in right subtree
+        Until all nodes are traversed
+        Step 1 :Visit all nodes in left subtree.
+        Step 2 :Visit root node.
+        Step 3 :Visit all nodes in right subtree
         '''
         if self.root is None:
             return
@@ -104,15 +104,15 @@ class BinaryTree:
                 node = stack.pop()
                 data.append(node.val)
                 node = node.right
-    return data
+        return data
 
     def preorder(self):
         '''
         pre-order tree traversal
-        Until all nodes are traversed −
-        Step 1 − Visit root node.
-        Step 2 − Visit all nodes in left subtree.
-        Step 3 − Visit all nodes in right subtree.
+        Until all nodes are traversed
+        Step 1 : Visit root node.
+        Step 2 : Visit all nodes in left subtree.
+        Step 3 : Visit all nodes in right subtree.
         '''
         data = []
         if self.root is None:
@@ -126,15 +126,15 @@ class BinaryTree:
                 stack.push(node.right)
             if node.left:
                 stack.push(node.left)
-    return data
+        return data
 
     def postorder(self):
         '''
         post-order tree traversal
-        Until all nodes are traversed −
-        Step 1 − Visit all nodes in left subtree.
-        Step 2 − Visit all nodes in right subtree.
-        Step 3 − Visit root node.
+        Until all nodes are traversed
+        Step 1 :Visit all nodes in left subtree.
+        Step 2 :Visit all nodes in right subtree.
+        Step 3 : Visit root node.
         '''
         traversal_lis = []
         stack = Stack()
@@ -149,7 +149,7 @@ class BinaryTree:
             if stack.get_stack():
                 node = stack.pop()
                 current = node.left
-    return data
+        return data
 
 if __name__ == '__main__':
 
